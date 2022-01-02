@@ -15,7 +15,7 @@ project "asio"
     location "build"
     targetname "asio"
     targetdir "bin/%{cfg.buildcfg}"
-    system "Windows"
+    --system "Windows"
     --architecture "x86_64"
 
     filter "configurations:Debug"
@@ -49,8 +49,6 @@ project "asio"
     -- Main source files
     files ({ "include/**" })
 
-
-    -- Precompiled headers
     filter { "files:include/asio/impl/src.cpp" }
         flags { 'ExcludeFromBuild' }
     filter {}
@@ -63,7 +61,6 @@ project "asio"
 
     ASIO_LINK_DIRS = {}
     appendTable(ASIO_LINK_DIRS, _SCRIPT_DIR .. "/bin/%{cfg.buildcfg}/")
-    appendTable(ASIO_LINK_DIRS, "C:/Program Files/OpenSSL-Win64/lib/VC/static/")
 
     ASIO_LINKS = {}
     appendTable(ASIO_LINKS, "asio")
