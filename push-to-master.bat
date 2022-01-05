@@ -13,6 +13,7 @@ for %%a in ("%~dp0\.") do set "parentfolder=%%~nxa"
 
 echo.
 echo Pushing all changes of %parentfolder% to master...
+git status
 git add .
 git commit -m "Automated commit"
 git push origin HEAD:master
