@@ -13,9 +13,8 @@ project "asio"
     cppdialect "C++17"
     staticruntime "on"
     location "build"
-    targetname "asio"
     targetdir "bin/%{cfg.buildcfg}"
-    --system "Windows"
+    targetname "%{prj.name}"
     
     filter { "platforms:x86" }
         architecture "x86"
