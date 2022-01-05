@@ -9,10 +9,12 @@ for /D %%i in (modules/*) do (
     )
 )
 
+cd "%~dp0"
 for %%a in ("%~dp0\.") do set "parentfolder=%%~nxa"
 
 echo.
 echo Pushing all changes of %parentfolder% to master...
+dir
 git status
 git add .
 git commit -m "Automated commit"
